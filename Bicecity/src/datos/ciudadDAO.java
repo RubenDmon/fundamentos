@@ -22,21 +22,11 @@ import conexion.Servidor;
 public class ciudadDAO {
         public ciudadDAO(){
     }
-        /**
-     * Incluye una nueva fila en la tabla EMPLOYEES.
-     * @throws RHException
-     */
     public void incluirCiudad(Ciudad ciudad) throws Excepcion {
       try {
       
         String strSQL = "INSERT INTO bicecity (k_idciudad,n_ciudad,o_horainicialserv,o_horafinalserv) VALUES(?,?,?,?)";
         //se llama a tomar conccion de servidor
-        
-        String timeString = "12:34:56";
-        
-        // Crear la instancia de Time a partir del string
-        Time time = Time.valueOf(timeString);
-        
         Connection conexion = Servidor.getInstance().tomarConexion();
         PreparedStatement prepStmt = conexion.prepareStatement(strSQL);
         
@@ -49,7 +39,7 @@ public class ciudadDAO {
         Servidor.getInstance().commit();
       } catch (SQLException e) {
            Servidor.getInstance().rollback();
-           throw new Excepcion( "ciudadDAO", "No pudo crear el empleado"+ e.getMessage());
+           throw new Excepcion( "ciudadDAO", "No pudo crear la ciudad"+ e.getMessage());
       }  finally {
          Servidor.getInstance().liberarConexion();
       }

@@ -13,6 +13,11 @@ import logica.Gestor;
 public class launcher {
         public static void main(String[] args) throws Excepcion {
         Gestor ges= new Gestor();
-        ges.incluirCiudad(0, "bogota", "10:00:00", "12:22:55");       
-}
+       // ges.incluirCiudad(0, "bogota", "10:00:00", "12:22:55");  
+       ges.incluirUser("102166", "CC","rube@gmail.com", "ruben","","Montoya","","Colombiana","2023-05-25","EPS","m", 313145,125);
+      System.out.println(ges.countUser());
+        
+        
+        }
+        
 }
