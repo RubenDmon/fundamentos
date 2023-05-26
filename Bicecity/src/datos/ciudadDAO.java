@@ -29,7 +29,7 @@ public class ciudadDAO {
     public void incluirCiudad(Ciudad ciudad) throws Excepcion {
       try {
       
-        String strSQL = "INSERT INTO bisecity (k_idciudad,n_ciudad,o_horainicialserv,o_horafinalserv) VALUES(?,?,?,?)";
+        String strSQL = "INSERT INTO bicecity (k_idciudad,n_ciudad,o_horainicialserv,o_horafinalserv) VALUES(?,?,?,?)";
         //se llama a tomar conccion de servidor
         
         String timeString = "12:34:56";
@@ -49,7 +49,7 @@ public class ciudadDAO {
         Servidor.getInstance().commit();
       } catch (SQLException e) {
            Servidor.getInstance().rollback();
-           throw new Excepcion( "EmpleadoDAO", "No pudo crear el empleado"+ e.getMessage());
+           throw new Excepcion( "ciudadDAO", "No pudo crear el empleado"+ e.getMessage());
       }  finally {
          Servidor.getInstance().liberarConexion();
       }

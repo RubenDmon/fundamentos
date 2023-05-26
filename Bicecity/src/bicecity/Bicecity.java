@@ -8,7 +8,7 @@ package bicecity;
  *
  * @author rdmon
  */
-public class Bisecity {
+public class Bicecity {
 
     /**
      * @param args the command line arguments
