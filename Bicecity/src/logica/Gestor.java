@@ -19,7 +19,6 @@ public class Gestor {
     
     private Ciudad ciudad;
     private Usuario usuario;
-    
     private Cuenta cuenta;
     
     public Gestor() {
@@ -37,8 +36,8 @@ public class Gestor {
         public void incluirUser(String k_idusuario, String i_tipoid,String n_correo,String n_nombre1,String n_nombre2,String n_apellido1,String n_apellido2,String n_nacionalidad,String f_nacimiento,String n_eps,String i_sexo,int v_celular,int saldoI) throws Excepcion {
       usuario = new Usuario();
       
-      usuario.getCuenta().setSaldoIN(saldoI);
-      
+      usuario.getCuenta().setSaldo(saldoI); 
+      usuario.getCuenta().setEstado("ACTV");
       usuario.setIdUsuario(k_idusuario);
       usuario.setTipoId(i_tipoid);
       usuario.setCorreo(n_correo);
@@ -51,12 +50,22 @@ public class Gestor {
       usuario.setEps(n_eps);
       usuario.setSexo(i_sexo);
       usuario.setCelular(v_celular);
-      
-
       usuarioDAO.incluirUsuario(usuario);
     }
         public int countUser() throws Excepcion {
       return usuarioDAO.contarUsuarios();
     }
+        
+     //si se hace de inmediato
+     public void asociarPlan(int Plan) throws Excepcion {
+             usuario.getCuenta().setCodigo(usuarioDAO.obtenerIdCuenta(usuario.getIdUsuario()));
+             usuarioDAO.asociarPlan(usuario.getCuenta().getCodigo() , Plan);
+    }
+        
+    public void iniciar(String idUser) throws Excepcion {
+             usuario=usuarioDAO.obtenerUsuario(idUser);
+             System.out.println(usuario.getApellido1());
+    }
+        
       
 }
