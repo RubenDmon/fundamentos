@@ -50,7 +50,7 @@ public class launcher {
         //aca empieza el modulo de inicio de seccion
         inicioUsuario(ges, idUser);
         //para usar este primero hay que iniciar
-
+/*
         ///para iniciar un viaje
         ges.incluirViajeDes();
         if (ges.getUserViajeI()) {
@@ -59,12 +59,12 @@ public class launcher {
             // y aca el metodo de bloqueo
         } else {
             System.out.println("lo siento no puedes viajar");
-        }
+        }*/
 
         //siempre despues de un bloqueo se refrescan los datos de lo cuenta
         ges.iniciar(idUser);
         //para acabar un viaje y recibir el dinero el condicional es para que verificque que si comenzo un viaje
-
+/*
         if (ges.getUserViajeI()) {
             ges.incluirViajeBloq();
         }
@@ -81,7 +81,7 @@ public class launcher {
             System.out.println("usuario corregido correctamente");
         } else {
             System.out.println("Error nose pudo actualizar el user");
-        }
+        }*/
         ges.iniciar(idUser);
         ges.historialViajes();
     }

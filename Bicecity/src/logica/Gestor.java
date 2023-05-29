@@ -167,7 +167,10 @@ public void historialViajes() throws Excepcion {
 ///mirar el estado del viaje si el usuario puede o no viajar*************************************************************
     usuario.getCuenta().setViajes(viajeDAO.obtenerListaViajes(usuario.getCuenta()));
     for(int i=0;i<usuario.getCuenta().getViajes().size();i++){
-        System.out.println("id: "+usuario.getCuenta().getViajes().get(i).getIdViaje() +"costo: "+usuario.getCuenta().getViajes().get(i).getCosto());
+        System.out.println("id: "+usuario.getCuenta().getViajes().get(i).getIdViaje() +" hora I: "+usuario.getCuenta().getViajes().get(i).getHoraI());
+    }
+    if(usuario.getCuenta().getViajes().size()==0){
+        System.out.println("no hay viajes registrados");
     }
         //usuario.getCuenta().setSaldo(usuario.getCuenta().getSaldo()-usuario.getCuenta().getPlan().getvSacarB());
         // System.out.println(usuario.getCuenta().getPlan().getIdPlan());
