@@ -98,6 +98,7 @@ public class EditarPerfil_Vista extends JFrame{
         
         bGuardar = new JButton("Guardar");
         bCancelar = new JButton("Cancelar");
+        bCancelar.addActionListener(EditarPerfil_Component);
         pContenido.add(bGuardar);
         pContenido.add(bCancelar);
         
