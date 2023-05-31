@@ -23,10 +23,14 @@ public class EditarPerfil_Component implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-	}
-	
-	public EditarPerfil_Vista getIncioTemplate() {
-		return EditarPerfil_Vista;
+            if(e.getActionCommand().equals("Cancelar")) {
+                EditarPerfil_Vista.setVisible(false);
+                if(Inicio_Component == null) {
+                    Inicio_Component = new Inicio_Component();
+		}
+		else
+                    Inicio_Component.getIncioTemplate().setVisible(true);
+		EditarPerfil_Vista.setVisible(false);
+            }
 	}
 }
